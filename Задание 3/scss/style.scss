@@ -1,0 +1,303 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&display=swap');
+$m_color:#5222D0;
+@mixin mg_pad {
+    margin:0;
+    padding:0;
+}
+@mixin font {
+    font-family: 'Roboto Slab', serif;
+    line-height: 100%;
+}
+.header{
+    &__up{
+        height: 40px;
+        background-image: url('./../img/browser.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        text-align: center;
+    }
+    &__uptext{
+        @include mg_pad;
+        @include font;
+        transform:translateY(50%);
+        font-size:16px;
+        font-weight: 300;
+        font-size: 16px;
+        opacity: 0.5;
+        color:black;
+    }
+    &__down{
+        display: flex;
+        justify-content: space-between;
+        margin: 50px 74px 0 76px;
+    }
+    &__button{
+        max-width:115px;
+        position:relative;
+        box-sizing: border-box;
+        padding:14px 33px 14px 16px;
+        border:none;
+        border-radius: 28px;
+        background-color: $m_color;
+    }
+    &__textbutton{
+        @include font;
+        @include mg_pad;
+        font-weight: 500;
+        font-size: 13px;
+        color: #FFFFFF;
+    }
+    &__ico{
+        display:inline;
+        position: absolute;
+        bottom:17px;
+        right:14px;
+    }
+}
+.main{
+    max-height:100vh;
+    margin-left:126px;
+    margin-bottom:80px;
+    display:grid;
+    grid-template-columns: 45% 55%;
+    grid-template-rows: 11% 60% 29%;
+    background-image:url("./../img/pic.png");
+    background-repeat:no-repeat;
+    background-position: right;
+    background-size:contain;
+    &__description{
+   
+        grid-row: 2/3;
+    }
+    &__footer{
+        align-self: end;
+        grid-row: 3/4;
+        margin-top: 146px;
+    }
+    &__link{
+        margin-right:24px;
+        text-decoration: none;
+        font-family: 'Roboto Slab', serif;
+        font-weight: 300;
+        font-size: 20px;
+        line-height: 160%;
+        color: #5222D0;
+    }
+    &__link:last-child{
+        margin-right:0;
+    }
+    &__picture{
+        max-width:784px;
+        img{
+            width:100%;
+        }
+    }
+    &__header{
+        @include mg_pad;
+        font-family: 'Roboto Slab', serif;
+        font-weight: 600;
+        font-size: 60px;
+        line-height: 120%;
+        color: #000000;
+    }
+    &__text{
+        margin-top:38px;
+        margin-bottom: 30px;
+        font-family: 'Roboto Slab';
+        font-weight: 300;
+        font-size: 20px;
+        line-height: 160%;
+        color: #000000;
+    }
+    &__button{
+        width:262px;
+        position:relative;
+        box-sizing:border-box;
+        padding:28px 90px 28px 33px;
+        border-radius:45px;
+        background-color: $m_color;
+        span{
+            font-family: 'Roboto Slab', serif;
+            font-weight: 500;
+            font-size: 35px;
+            line-height: 35px;
+            color: #FFFFFF;
+        }
+        img{
+            position:absolute;
+            bottom:28px;
+            right:32px;
+        }
+    }
+    &_possibility{
+        &__footer{
+            margin-left:126px;
+            margin-bottom:80px;
+            .main__link{
+                color:#000000;
+            }
+        }
+        &__header{
+            margin: 23px 0 20px 0;
+            font-family: 'Roboto Slab', serif;
+            font-weight: 600;
+            font-size: 30px;
+            line-height: 120%;
+        }
+        &__desc{
+            margin-bottom: 25px;
+            font-family: 'Roboto Slab', serif;
+            font-weight: 300;
+            font-size: 20px;
+            line-height: 160%;
+        }
+        &__box_news{
+            height: 70%;
+            margin: 0 40px 0 33px;
+            background-color: #EC615B;
+        }
+    }
+    &_possibility__grid{
+        margin: 36px 72px 86px 92px;
+        display:grid;
+        grid-template-columns: repeat(3, minmax(250px, 1fr));
+    }
+    &_possibility__item{
+        margin: 26px 40px 25px 33px;
+        h3{
+            margin:0;
+            font-family: 'Roboto Slab', serif;
+            font-weight: 600;
+            font-size: 30px;
+            line-height: 120%;
+            color: #000000;
+        }
+    }
+    &_possibility__box{
+        border: 1px solid #BB2247;
+    }
+    &_possibility__pic{
+        max-width:365px;
+        min-height: 232px;
+        img{
+            width:100%;
+        }
+    }
+}
+.one_play{
+    transform: translateX(-16px);
+}
+.news{
+    margin:22px 25px 0 18px;
+    .main_possibility__header{
+        color: #FFFFFF;
+    }
+    input{
+        margin:16px 0 23px 0;
+        width: 98%;
+        height: 40px;
+    }
+}
+.possibility__header{
+    margin-left:126px;
+    margin-top:89px;
+}
+@media (max-width:1000px) {
+    .possibility__header{
+        margin-top:40px;
+    }
+    .one_play{
+        transform: translateX(0);
+    }
+    .main{
+        grid-template-columns: 80% 27%;
+        background-image:url("./../img/background.png");
+        &_possibility__grid{
+            margin: 36px 72px 40px 92px;
+            grid-template-columns: repeat(2, minmax(250px, 1fr));
+        }
+    }
+
+}
+@media (max-width:760px) {
+    .main{
+        &_possibility__grid{
+            margin: 36px 72px 40px 92px;
+            grid-template-columns: 1fr;
+        }
+        &_possibility__box_news {
+            height: 112%;
+        }
+    }
+}
+@media (max-width:600px) {
+    .main{
+        &__header, .possibility__header{
+            font-size: 50px;
+            line-height: 110%;
+        }
+    }
+    .main, .possibility__header{
+        margin-left: 70px;
+    }
+   
+}
+@media (max-width:470px) {
+    .header__down {
+        margin: 30px 24px 0 21px;
+    }
+    .main{
+        grid-template-rows: 5% 60% 35%;
+        margin-left: 12%;
+        &_possibility__grid {
+            margin: 31px 26px 60px 31px;
+        }
+        &_possibility__footer{
+            margin-left: 60px;
+        }
+    }
+    .main__header, .possibility__header {
+        font-size: 45px;
+    }
+    .possibility__header {
+        margin-left: 12%;
+    }
+    .main__link {
+        display:inline-block;
+    }
+    .main_possibility__box{
+        border:none;
+    }
+}
+@media (max-width: 400px){
+    .main__header, .possibility__header {
+        margin-left: 9%;
+    }
+}
+@media (max-width:370px) {
+    .header__down{
+        flex-direction: column;
+        align-items: center;
+    }
+    .header__button {
+        margin-top: 10px;
+    }
+    .header__ico {
+        bottom: 15px;
+    }
+    .main__button span {
+        font-size: 30px;
+    }
+    .main__header, .possibility__header {
+        font-size: 35px;
+        margin-left: 4%;
+        text-align: center;
+    }
+    .main__footer {
+        margin-top: 100px;
+        margin-bottom: 76px;
+    }
+    .main__button {
+        width: 240px;
+    }
+}
